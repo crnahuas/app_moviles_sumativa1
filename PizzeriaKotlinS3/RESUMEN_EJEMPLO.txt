@@ -1,5 +1,5 @@
 === RESUMEN INTEGRADO | SEMANA 3 | FORMA B ===
-Demostración reproducible con datos de ejemplo. Fecha fija: 09/11/2026.
+Demostración reproducible con datos de ejemplo.
 
 1. Regex y rangos
 Correo inválido rechazado: Correo inválido. Usa el formato nombre@dominio.com.

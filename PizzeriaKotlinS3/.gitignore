@@ -3,6 +3,5 @@ build/
 .kotlin/
 out/
 bin/
-.idea/workspace.xml
-.idea/shelf/
+.idea/
 .DS_Store

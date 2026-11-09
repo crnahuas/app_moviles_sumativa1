@@ -22,7 +22,7 @@ En PowerShell:
 
 Si Java no se encuentra, configura `JAVA_HOME` con la ubicación de tu JDK.
 
-En IntelliJ IDEA, abre esta carpeta como proyecto Gradle, selecciona un JDK 17 o superior y sincroniza las dependencias. Ejecuta `src/Main.kt` o la configuración **Pizzería Semana 3**.
+En IntelliJ IDEA, abre esta carpeta como proyecto Gradle, selecciona un JDK 17 o superior y sincroniza las dependencias. Ejecuta `src/Main.kt` o la tarea Gradle `run`.
 
 ## Menú principal
 
@@ -107,7 +107,7 @@ Para ejecutar una demostración automática con datos de ejemplo:
 ./ejecutar.sh --demo
 ```
 
-También puedes usar la configuración **Resumen Semana 3** en IntelliJ o `.\gradlew.bat --quiet demostracion` en PowerShell. La demostración utiliza una sesión independiente y una fecha fija: `09/11/2026`.
+También puedes usar la tarea Gradle `demostracion` en IntelliJ o `.\gradlew.bat --quiet demostracion` en PowerShell. La demostración utiliza una sesión independiente y una fecha fija: `09/11/2026`.
 
 [RESUMEN_EJEMPLO.txt](RESUMEN_EJEMPLO.txt) contiene la salida de esa demostración. Para recorrer un ejemplo desde el menú, con validaciones, combinación y entrega:
 
@@ -134,4 +134,4 @@ Fuera del periodo promocional, las mismas cuatro pizzas totalizan **38.020,50 pe
 ./verificar.sh
 ```
 
-En PowerShell usa `.\gradlew.bat test`; en IntelliJ, la configuración **Pruebas Semana 3**. Las pruebas comprueban validaciones, cálculos, combinación de pedidos, inventario y entregas. El reporte se genera en `build/reports/tests/test/index.html`.
+En PowerShell usa `.\gradlew.bat test`; en IntelliJ, la tarea Gradle `test`. Las pruebas comprueban validaciones, cálculos, combinación de pedidos, inventario y entregas. El reporte se genera en `build/reports/tests/test/index.html`.
