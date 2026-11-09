@@ -1,0 +1,129 @@
+=== RESUMEN INTEGRADO | SEMANA 3 | FORMA B ===
+Demostración reproducible con datos de ejemplo. Fecha fija: 09/11/2026.
+
+1. Regex y rangos
+Correo inválido rechazado: Correo inválido. Usa el formato nombre@dominio.com.
+Teléfono incompleto rechazado: Teléfono inválido. Ingresa 12 dígitos (2 de país y 10 nacionales) o +XX (XXX) XXX-XXXX.
+Correo validado: carolina.munoz@example.com
+Teléfono formateado: +56 (123) 456-7890
+Cantidades permitidas: 1..100; 0 pertenece: false; 100 pertenece: true; 101 pertenece: false.
+Fecha 31/10/2026 dentro del periodo: false
+Fecha 01/11/2026 dentro del periodo: true
+Fecha 30/11/2026 dentro del periodo: true
+Fecha 01/12/2026 dentro del periodo: false
+
+2. Igualdad y prevención de duplicados
+Primer cliente registrado: true
+Cliente == duplicado: true; misma referencia: false
+Hash de clientes coincidente: true
+Registro de cliente duplicado aceptado: false
+Producto == mismo nombre y categoría: true
+Producto == mismo nombre y otra categoría: false
+Hash de productos coincidente: true
+Registro de producto duplicado aceptado: false
+Registros únicos: 1 cliente; 3 productos.
+
+3. Anotaciones detectadas durante el cálculo
+
+--- Productos identificados con @Promocionable mediante reflection ---
+Margarita | PizzaPromocional | 5%
+Vegetariana | PizzaDeTemporada | 10%
+Periodo inclusivo: 01/11/2026 a 30/11/2026.
+2 Margarita dentro de promoción: 19.218,50 pesos
+2 Margarita fuera de promoción: 20.230,00 pesos
+
+4. Sobrecarga de + y desestructuración de dos entidades
+Pedido A (2 productos) + Pedido B (2 productos) = 4 productos.
+El total se recalcula con descuento por volumen y promoción antes del IVA.
+Combinar conserva el inventario: true
+Cliente desestructurado: Carolina Muñoz | Correo: carolina.munoz@example.com | Teléfono: +56 (123) 456-7890
+Pedido desestructurado: Carolina Muñoz | 4 productos | 36.146,25 pesos
+
+========================================
+RESUMEN DEL BORRADOR SIN CONFIRMAR
+========================================
+Cliente: Carolina Muñoz | Teléfono: +56 (123) 456-7890 | Correo: carolina.munoz@example.com
+Dirección: Av. Los Aromos 1240, departamento 302
+Zona de entrega: Centro
+Fecha del pedido: 09/11/2026
+Fecha en periodo promocional: Sí
+
+Productos (precios sin impuesto):
+- Margarita | 8.500,00 pesos c/u | Cantidad: 2
+- Pepperoni | 9.500,00 pesos c/u | Cantidad: 1
+- Vegetariana | 9.000,00 pesos c/u | Cantidad: 1
+
+Subtotal: 35.500,00 pesos
+Descuento por volumen (10% desde 4 pizzas): 3.550,00 pesos
+Descuento promocional por fecha y anotación: 1.575,00 pesos
+Descuento total: 5.125,00 pesos
+Impuestos (19% sobre el subtotal descontado): 5.771,25 pesos
+TOTAL FINAL: 36.146,25 pesos
+
+Estado: Borrador sin confirmar
+Repartidor: Sin asignar; el pedido no está confirmado.
+Notas: Entregar en conserjería; Departamento 302
+========================================
+Pedido combinado confirmado una vez con identificador #1.
+Stock tras confirmar cuatro pizzas: {masa=16, salsa=16, queso=16, pepperoni=9, champiñones=9}
+Segunda confirmación rechazada: Este pedido ya fue confirmado.
+
+5. Reflection de clases del dominio
+
+Clase: Cliente
+Propiedades: contacto, correo, direccion, nombre, zona
+Métodos: component1, component2, component3, describir, equals, hashCode, toString
+
+Clase: Producto
+Propiedades: categoria, ingredientes, nombre, precio
+Métodos: detallarProducto, equals, hashCode, toString
+
+Clase: Pedido
+Propiedades: cliente, estado, fecha, id, notas, periodo, productos, repartidor
+Métodos: calcularTotal, cambiarEstado, component1, component2, component3, confirmarConId, equals, finalizarEntrega, hashCode, iniciarReparto, plus, toString
+
+Clase: PizzaPromocional
+Propiedades: categoria, ingredientes, nombre, precio
+Métodos: detallarProducto, equals, hashCode, toString
+
+Clase: PizzaDeTemporada
+Propiedades: categoria, ingredientes, nombre, precio
+Métodos: detallarProducto, equals, hashCode, toString
+
+6. Seguimiento de la entrega
+Pedido #1: En camino con Diego.
+Entrega registrada; Diego disponible: true.
+
+=== Reporte de pedidos del día ===
+#1 | Carolina Muñoz | 2 x Margarita, 1 x Pepperoni, 1 x Vegetariana | 36.146,25 pesos | Entregado
+
+Completados (1): #1
+Pendientes (0): Ninguno
+
+========================================
+RESUMEN DEL PEDIDO #1
+========================================
+Cliente: Carolina Muñoz | Teléfono: +56 (123) 456-7890 | Correo: carolina.munoz@example.com
+Dirección: Av. Los Aromos 1240, departamento 302
+Zona de entrega: Centro
+Fecha del pedido: 09/11/2026
+Fecha en periodo promocional: Sí
+
+Productos (precios sin impuesto):
+- Margarita | 8.500,00 pesos c/u | Cantidad: 2
+- Pepperoni | 9.500,00 pesos c/u | Cantidad: 1
+- Vegetariana | 9.000,00 pesos c/u | Cantidad: 1
+
+Subtotal: 35.500,00 pesos
+Descuento por volumen (10% desde 4 pizzas): 3.550,00 pesos
+Descuento promocional por fecha y anotación: 1.575,00 pesos
+Descuento total: 5.125,00 pesos
+Impuestos (19% sobre el subtotal descontado): 5.771,25 pesos
+TOTAL FINAL: 36.146,25 pesos
+
+Estado: Entregado
+Repartidor: Diego
+Notas: Entregar en conserjería; Departamento 302
+========================================
+
+=== FIN DEL RESUMEN DE SEMANA 3 ===

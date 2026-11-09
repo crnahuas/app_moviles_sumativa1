@@ -1,0 +1,8 @@
+build/
+.gradle/
+.kotlin/
+out/
+bin/
+.idea/workspace.xml
+.idea/shelf/
+.DS_Store
